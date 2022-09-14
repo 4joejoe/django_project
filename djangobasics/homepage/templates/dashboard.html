@@ -1,0 +1,33 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% tailwind_css %}
+
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <div class="h-screen flex flex-col items-center gap-y-20">
+        <div class="flex items-center w-screen flex-col">
+            <h1 class="text-slate-800 text-3xl max-w-max mt-6">DASHBOARD PAGE</h1>
+            <!-- <span>Bookmark your Data findings</span> -->
+        </div>
+        <div class="flex flex-col gap-y-6 w-max h-max p-10 rounded-md border border-opacity-20 border-neutral-600 shadow-xl">
+            <p>Hello {{ user.username }}</p>
+            <a href="upload">
+
+                <button  class="bg-blue-600 text-white rounded-lg border border-slate-500 font-bold w-56 h-10 shadow hover:shadow-lg">UPLOAD FILE</button>
+            </a>
+
+        </div>
+    <a href="logout">
+        <button class="bg-white rounded-lg border border-slate-500 font-bold w-56 h-10 shadow hover:shadow-lg">LOG OUT</button>
+    </a>
+    {% endif %}
+</body>
+</html>

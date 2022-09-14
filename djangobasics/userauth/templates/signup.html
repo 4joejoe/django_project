@@ -1,0 +1,31 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% tailwind_css %}
+
+</head>
+<body>
+        {% tailwind_css %}
+        <div class="h-screen flex flex-col items-center gap-y-20">
+            <div class="flex items-center w-screen flex-col">
+                <h1 class="text-slate-800 text-3xl max-w-max mt-6">DATA SCIENCE BOOKMARK</h1>
+                <span>Bookmark your Data findings</span>
+            </div>
+            <div class="flex flex-col gap-y-6 w-max h-max p-10 rounded-md border border-opacity-20 border-neutral-600 shadow-xl">
+                <p class="text-center">SIGN UP PAGE</p>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="inline-block h-10 px-6 p-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+  
+</body>
+</html>
